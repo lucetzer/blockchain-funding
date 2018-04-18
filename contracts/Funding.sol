@@ -11,9 +11,12 @@ contract Funding {
         owner = msg.sender;
     }
 
+    event logDonation(address sender, uint amount);
+
     function donate() public payable {
         balances[msg.sender] += msg.value;
         raised += msg.value;
+        emit logDonation(msg.sender, msg.value);
     }
 
 }

@@ -1,10 +1,10 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.21;
 
 contract Funding {
 
     address public owner;
 
-    function Funding() public {     //constructor
+    function Funding() public {
         owner = msg.sender;
     }
 

@@ -16,9 +16,18 @@ contract("Funding", (accounts) => {
   });
 
   it("accepts donations from accounts", async () => {
-    await contract.donate({from: account1, value: 10 * FINNEY});
-    await contract.donate({from: account2, value: 20 * FINNEY});
+    await contract.donate({ from: account1, value: 10 * FINNEY });
+    await contract.donate({ from: account2, value: 20 * FINNEY });
     assert.equal(await contract.raised.call(), 30 * FINNEY);
   });
+
+  it("keeps track of donator balance", async () => {
+    await contract.donate({ from: account1, value: 5 * FINNEY });
+    await contract.donate({ from: account2, value: 15 * FINNEY });
+    await contract.donate({ from: account2, value: 3 * FINNEY });
+    assert.equal(await contract.balances.call(account1), 5 * FINNEY);
+    assert.equal(await contract.balances.call(account2), 18 * FINNEY);
+  });
+
 
 });

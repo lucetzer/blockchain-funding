@@ -15,6 +15,8 @@ Solidity:
 
 * staticallly typed language
 
-* Has a unique type called address which are Ethereum addresses, stored as 20 byte values
+* has a unique type called address which are Ethereum addresses, stored as 20 byte values
 Every account and smart contract on the Ethereum blockchain has an address
 and can send and receive Ether to and from this address.
+
+* payable allows a function to accept ether, without it the transaction will be rejected

@@ -1,3 +1,5 @@
+//truffle configuration file
+
 module.exports = {
   networks: {
     development: {

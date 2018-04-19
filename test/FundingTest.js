@@ -34,9 +34,7 @@ contract("Funding", (accounts) => {
       assert.equal(response.logs[0].event, "logDonation");
       assert.equal(response.logs[0].args.sender, account1);
       assert.equal(response.logs[0].args.amount, 10 * FINNEY);
-  });
-
-
+    });
   });
 
 });

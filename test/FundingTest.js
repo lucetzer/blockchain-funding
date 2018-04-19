@@ -13,7 +13,7 @@ contract("Funding", (accounts) => {
       await contract.donate({ from: account2, value: 20 * FINNEY });
   })
 
-  it("shouldSetAnOwnerAndFundNameDuringCreation", async () => {
+  it("shouldSetAnOwnerDuringCreation", async () => {
     const owner = await contract.owner();
     assert.equal(owner, account1);
   });

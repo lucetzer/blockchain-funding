@@ -12,7 +12,7 @@ contract Funding {
     }
 
     event logDonation(address sender, uint amount);
-    // events helps track an occurrence. It may mean that other DApps can listen for this event and act upon it.
+    // events helps track an occurrence. DApps can listen for this event and act upon it.
 
     function donate() public payable {
         balances[msg.sender] += msg.value;
